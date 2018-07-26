@@ -13,19 +13,28 @@
     <h1>My Bookmarks</h1>
     <div>
       <button>Add Bookmark</button>
-      <button>Minimum Rating</button>
+        <fieldset>
+          <label for="rating-select">Minimum Rating</label>
+          <select name="rating-select" id="rating-select">
+            <option>5 Stars</option>
+            <option>4 Stars</option>
+            <option>3 Stars</option>
+            <option>2 Stars</option>
+            <option selected="selected">1 Stars</option>
+          </select>
+        </fieldset>
     </div>
     <ul class="bookmark-list js-bookmark-list">
       <li class="js-item-element">
         <h2 class="list-title">Article On Cats</h2>
         <div class="ratings-display">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem similique inventore qui quaerat distinctio. Distinctio aliquam recusandae.</p>
+          <p>&#x2605; &#x2605; &#x2605; &#x2605; &#x2605;</p>
         </div>
       </li>
       <li class="js-item-element">
         <h2 class="list-title">Article On Cats</h2>
         <div class="ratings-display">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem similique inventore qui quaerat distinctio. Distinctio aliquam recusandae.</p>
+          <p>&#x2605; &#x2605; &#x2605; &#x2606; &#x2606;</p>
         </div>
       </li>
     </ul>
@@ -47,16 +56,12 @@
       </div>
     </form>
     <ul class="bookmark-list js-bookmark-list">
-      <li class="js-item-element">
+      <li class="js-item-element detailed-look">
         <h2 class="list-title">Article On Cats</h2>
         <div class="ratings-display">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem similique inventore qui quaerat distinctio. Distinctio aliquam recusandae.</p>
-        </div>
-      </li>
-      <li class="js-item-element">
-        <h2 class="list-title">Article On Cats</h2>
-        <div class="ratings-display">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem similique inventore qui quaerat distinctio. Distinctio aliquam recusandae.</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus harum culpa sequi vitae! Facere magni soluta vero odit et vel sint pariatur odio autem reiciendis, nesciunt nam, a totam optio.</p>
+          <button>Visit Site</button> <button>Delete Bookmark</button>
+          <p>&#x2605; &#x2605; &#x2605; &#x2605; &#x2605;</p>
         </div>
       </li>
     </ul>
