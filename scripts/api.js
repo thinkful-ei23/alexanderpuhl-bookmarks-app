@@ -20,7 +20,7 @@ const api = (function () {
     });
   };
 
-  const updateBookmark = function(id, updateData, callback) {
+  const updateBookmark = function(id, updateData, callback){
     const stringifiedData = JSON.stringify(updateData);
     $.ajax({
       url: `${BASE_URL}/id`,
@@ -29,6 +29,10 @@ const api = (function () {
       data: stringifiedData,
       success: callback
     });
+  };
+
+  const deleteBookmark = function(id, callback){
+    
   };
 
   return {

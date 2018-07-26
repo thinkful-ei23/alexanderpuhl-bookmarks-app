@@ -1,19 +1,22 @@
 'use strict';
-/* global $, bookmarks, store, api */
+/* global $, bookmarkList, store, api */
 
 
 $(document).ready(function() {
-  bookmarks.bindEventListeners();
-  bookmarks.render();
+  console.log('document is ready');
+  bookmarkList.bindEventListeners();
+  console.log('finished running bindEventListeners');
+  bookmarkList.render();
+  console.log('finished running render');
   api.getBookmarks((items) => {
     items.forEach((item) => store.addBookmark(bookmark));
-    bookmarks.render();
+    bookmarkList.render();
   });
 });
 
 
-api.createBookmark('google', 'https://google.com', 'website for finding stuff on the internet', '5', (newItem) => {
-  api.getBookmarks((items) => {
-    console.log(items);
-  });
-});
+// api.createBookmark('google', 'https://google.com', 'website for finding stuff on the internet', '5', (newItem) => {
+//   api.getBookmarks((items) => {
+//     console.log(items);
+//   });
+// });

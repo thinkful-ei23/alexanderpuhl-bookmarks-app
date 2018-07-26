@@ -3,11 +3,7 @@
 
 const bookmarkList = (function(){
 
-  function getBookmarkIdFromElement(bookmark){
-    return $(bookmark)
-      .closest('.js-bookmark-element')
-      .data('bookmark-id')
-  }
+
 
   function generateBookmarkElement(bookmark){
     let bookmarkTitle = `<h2 class="list-title">${bookmark.title}</h2>`;
@@ -16,7 +12,7 @@ const bookmarkList = (function(){
     let bookmarkRating = `<p>${bookmark.rating}</p>`;
 
     return `
-      <li class="js-bookmark-element" data-item-id="${bookmark.id}">
+      <li class="js-bookmark-element" data-bookmark-id="${bookmark.id}">
         <h2 class="list-title">${bookmarkTitle}</h2>
         <div class="ratings-display">
           <p>${bookmarkRating}</p>
@@ -25,8 +21,8 @@ const bookmarkList = (function(){
     `;
   }
 
-  function generateBookmarkString(bookmarkList){
-    const bookmarks = bookmarks.map((bookmark) => generateBookmarkElement(bookmark));
+  function generateBookmarkString(list){
+    const bookmarks = list.map((bookmark) => generateBookmarkElement(bookmark));
     return bookmarks.join('');
   }
 
@@ -34,7 +30,9 @@ const bookmarkList = (function(){
     console.log('\'render\' ran');
 
     let bookmarks = store.bookmarks;
+    console.log(bookmarks);
     const bookmarkListBookmarksString = generateBookmarkString(bookmarks);
+    console.log(bookmarkListBookmarksString);
 
     //insert that HTML into the DOM
     $('.js-bookmark-list').html(bookmarkListBookmarksString);
@@ -46,9 +44,15 @@ const bookmarkList = (function(){
     
   }
 
+  function getBookmarkIdFromElement(bookmark) {
+    return $(bookmark)
+      .closest('.js-bookmark-element')
+      .data('bookmark-id');
+  }
+
   function handleDeleteBookmarkClicked(){
     $('.js-bookmark-list').on('click', '.js-bookmark-delete', event => {
-      const id = 
+      // const id = 
     });
   }
 
@@ -59,6 +63,7 @@ const bookmarkList = (function(){
 
 
   function bindEventListeners(){
+    console.log('ran bindEventListeners');
     handleNewBookmarkSubmit();
     handleDeleteBookmarkClicked();
     handleEditBookmarkSubmit();
