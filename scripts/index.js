@@ -6,10 +6,10 @@ $(document).ready(function() {
   console.log('document is ready');
   bookmarkList.bindEventListeners();
   console.log('finished running bindEventListeners');
-  bookmarkList.render();
-  console.log('finished running render');
-  api.getBookmarks((items) => {
-    items.forEach((item) => store.addBookmark(bookmark));
+  // bookmarkList.render();
+  console.log('Moving onto api.getBookmarks');
+  api.getBookmarks((bookmarks) => {
+    bookmarks.forEach((bookmark) => store.addBookmark(bookmark));
     bookmarkList.render();
   });
 });

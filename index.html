@@ -13,32 +13,32 @@
     <h1>My Bookmarks</h1>
     <div>
       <button>Add Bookmark</button>
-        <fieldset>
-          <label for="rating-select">Minimum Rating</label>
-          <select name="rating-select" id="rating-select">
-            <option>5 Stars</option>
-            <option>4 Stars</option>
-            <option>3 Stars</option>
-            <option>2 Stars</option>
-            <option selected="selected">1 Stars</option>
-          </select>
-        </fieldset>
+      <fieldset>
+        <label for="rating-select">Minimum Rating</label>
+        <select name="rating-select" id="rating-select">
+          <option>5 Stars</option>
+          <option>4 Stars</option>
+          <option>3 Stars</option>
+          <option>2 Stars</option>
+          <option selected="selected">1 Stars</option>
+        </select>
+      </fieldset>
     </div>
     <ul class="bookmark-list js-bookmark-list">
-      <li class="js-item-element">
+      <li class="js-bookmark-element">
         <h2 class="list-title">Article On Cats</h2>
         <div class="ratings-display">
           <p>&#x2605; &#x2605; &#x2605; &#x2605; &#x2605;</p>
         </div>
       </li>
-      <li class="js-item-element">
+      <li class="js-bookmark-element">
         <h2 class="list-title">Article On Cats</h2>
         <div class="ratings-display">
           <p>&#x2605; &#x2605; &#x2605; &#x2606; &#x2606;</p>
         </div>
       </li>
     </ul>
-    <form id="bookmark-form">
+    <!-- <form id="bookmark-form">
       <h2>Create a Bookmark</h2>
       <label for="title-entry"></label>
       <input type="text" name="title-entry" class="js-title-entry" placeholder="Title">
@@ -54,17 +54,17 @@
         <input type="radio" name="rating" value="2"> 2 Stars<br>
         <input type="radio" name="rating" value="1"> 1 Stars<br>
       </div>
-    </form>
-    <ul class="bookmark-list js-bookmark-list">
-      <li class="js-item-element detailed-look">
+    </form> -->
+    <!-- <ul class="bookmark-list js-bookmark-list">
+      <li class="js-bookmark-element detailed-look">
         <h2 class="list-title">Article On Cats</h2>
         <div class="ratings-display">
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus harum culpa sequi vitae! Facere magni soluta vero odit et vel sint pariatur odio autem reiciendis, nesciunt nam, a totam optio.</p>
-          <a href="http://google.com" class="button">Visit Site</a> <button>Delete Bookmark</button>
+          <a href="http://google.com" class="button">Visit Site</a> <button class="bookmark-item-delete js-bookmark-delete">Delete Bookmark</button>
           <p>&#x2605; &#x2605; &#x2605; &#x2605; &#x2605;</p>
         </div>
       </li>
-    </ul>
+    </ul> -->
   </section>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>

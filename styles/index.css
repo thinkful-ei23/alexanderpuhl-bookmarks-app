@@ -76,6 +76,7 @@ form > .rating-input {
 
 fieldset {
   border: 0;
+  display: inline;
   padding-left: 0;
 }
 
@@ -97,4 +98,8 @@ a.button {
   color: initial;
   padding: 10px;
   border-radius: 20px;
+}
+
+.bookmark-item-delete {
+  margin: 0 0 5px 5px;
 }

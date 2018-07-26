@@ -13,10 +13,11 @@ const bookmarkList = (function(){
 
     return `
       <li class="js-bookmark-element" data-bookmark-id="${bookmark.id}">
-        <h2 class="list-title">${bookmarkTitle}</h2>
+        ${bookmarkTitle}
         <div class="ratings-display">
-          <p>${bookmarkRating}</p>
+          ${bookmarkRating}
         </div>
+        <button class="bookmark-item-delete js-bookmark-delete">Delete Bookmark</button>
       </li>
     `;
   }
@@ -30,7 +31,7 @@ const bookmarkList = (function(){
     console.log('\'render\' ran');
 
     let bookmarks = store.bookmarks;
-    console.log(bookmarks);
+    // console.log(bookmarks);
     const bookmarkListBookmarksString = generateBookmarkString(bookmarks);
     console.log(bookmarkListBookmarksString);
 
@@ -52,7 +53,12 @@ const bookmarkList = (function(){
 
   function handleDeleteBookmarkClicked(){
     $('.js-bookmark-list').on('click', '.js-bookmark-delete', event => {
-      // const id = 
+      //get the index of the item in store.bookmarks
+      const id = getBookmarkIdFromElement(event.currentTarget);
+      // Use the found id to delete the bookmark
+      store.findAndDelete(id);
+      // render the updated shopping list
+      render();
     });
   }
 
