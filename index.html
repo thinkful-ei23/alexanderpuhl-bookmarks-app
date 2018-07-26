@@ -2,31 +2,65 @@
 <html lang="en">
 
 <head>
-  <title>Shopping List</title>
+  <title>My Bookmarks</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
-  <div class="container">
-    <h1>Bookmarks</h1>
-    <form id="js-bookmark-form">
-      <label for="shopping-list-entry">Add an item</label>
-      <input type="text" name="shopping-list-entry" class="js-shopping-list-entry" placeholder="e.g., broccoli">
-      <button type="submit">Add item</button>
-      <div>
-        <input type="checkbox" id="filter-checked" class="filter-checked js-filter-checked" />
-        <label for="filter-checked">Hide Checked</label>
-      </div>
-      <div>
-        <label for="js-shopping-list-search-entry">Search:</label>
-        <input type="text" name="shopping-list-search-entry" class="js-shopping-list-search-entry" />
+  <section class="container">
+    <h1>My Bookmarks</h1>
+    <div>
+      <button>Add Bookmark</button>
+      <button>Minimum Rating</button>
+    </div>
+    <ul class="bookmark-list js-bookmark-list">
+      <li class="js-item-element">
+        <h2 class="list-title">Article On Cats</h2>
+        <div class="ratings-display">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem similique inventore qui quaerat distinctio. Distinctio aliquam recusandae.</p>
+        </div>
+      </li>
+      <li class="js-item-element">
+        <h2 class="list-title">Article On Cats</h2>
+        <div class="ratings-display">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem similique inventore qui quaerat distinctio. Distinctio aliquam recusandae.</p>
+        </div>
+      </li>
+    </ul>
+    <form id="bookmark-form">
+      <h2>Create a Bookmark</h2>
+      <label for="title-entry"></label>
+      <input type="text" name="title-entry" class="js-title-entry" placeholder="Title">
+      <label for="url-entry"></label>
+      <input type="text" name="url-entry" class="js-url-entry" placeholder="https://example.com">
+      <br>
+      <label for="description-entry"></label><br>
+      <textarea type="text" name="description-entry" class="js-description-entry" placeholder="Longer description here" rows="5" cols="30"></textarea>
+      <div class="rating-input">
+        <input type="radio" name="rating" value="5" checked> 5 Stars<br>
+        <input type="radio" name="rating" value="4"> 4 Stars<br>
+        <input type="radio" name="rating" value="3"> 3 Stars<br>
+        <input type="radio" name="rating" value="2"> 2 Stars<br>
+        <input type="radio" name="rating" value="1"> 1 Stars<br>
       </div>
     </form>
-    <ul class="shopping-list js-shopping-list">
+    <ul class="bookmark-list js-bookmark-list">
+      <li class="js-item-element">
+        <h2 class="list-title">Article On Cats</h2>
+        <div class="ratings-display">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem similique inventore qui quaerat distinctio. Distinctio aliquam recusandae.</p>
+        </div>
+      </li>
+      <li class="js-item-element">
+        <h2 class="list-title">Article On Cats</h2>
+        <div class="ratings-display">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem similique inventore qui quaerat distinctio. Distinctio aliquam recusandae.</p>
+        </div>
+      </li>
     </ul>
-  </div>
+  </section>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
