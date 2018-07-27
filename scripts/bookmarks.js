@@ -3,8 +3,6 @@
 
 const bookmarkList = (function(){
 
-
-
   function generateBookmarkElement(bookmark){
     let bookmarkTitle = `<h2 class="list-title">${bookmark.title}</h2>`;
     let bookmarkDescription = `<p>${bookmark.desc}</p>`;
@@ -12,12 +10,9 @@ const bookmarkList = (function(){
     let bookmarkURL = `<a href="${bookmark.url}" class="button">Visit Site</a>`;
     let bookmarkDelete = '<button class="bookmark-item-delete js-bookmark-delete">Delete Bookmark</button>';
 
-    console.log(bookmark.expanded);
-
     if(bookmark.expanded === true) {
-      // console.log('inside generateBookmarkElement true side');
       return `
-      <li class="js-bookmark-element" data-bookmark-id="${bookmark.id}">
+      <li class="bookmark-element js-bookmark-element" data-bookmark-id="${bookmark.id}">
         ${bookmarkTitle}
         <div class="ratings-display">
           ${bookmarkDescription}
@@ -27,7 +22,6 @@ const bookmarkList = (function(){
       </li>
       `;
     }else {
-      // console.log('inside generateBookmarkElement false side');
       return `
       <li class="bookmark-element js-bookmark-element" data-bookmark-id="${bookmark.id}">
         ${bookmarkTitle}
@@ -123,7 +117,7 @@ const bookmarkList = (function(){
   function handleDeleteBookmarkClicked(){
     $('.js-bookmark-list').on('click', '.js-bookmark-delete', event => {
       const id = getBookmarkIdFromElement(event.currentTarget);
-      api.deleteBookmark(id, (bookmark) => {
+      api.deleteBookmark(id, () => {
         store.findAndDelete(id);
         render();
       });
@@ -153,7 +147,6 @@ const bookmarkList = (function(){
     handleDeleteBookmarkClicked();
     handleDisplayDetailedView();
     handleSortBookmarks();
-
   }
 
   return {

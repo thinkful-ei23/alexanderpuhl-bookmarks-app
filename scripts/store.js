@@ -41,7 +41,6 @@ const store = (function(){
     this.submitError = false;
   };
 
-
   return {
     bookmarks: [],
     adding: false,

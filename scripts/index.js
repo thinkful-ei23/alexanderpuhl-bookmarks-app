@@ -1,7 +1,6 @@
 'use strict';
 /* global $, bookmarkList, store, api */
 
-
 $(document).ready(function() {
   console.log('document is ready');
   bookmarkList.bindEventListeners();
