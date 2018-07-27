@@ -1,7 +1,11 @@
 'use strict';
-/* global $ */
+/* global $, api */
 
 const store = (function(){
+
+  const addingBookmark = function(){
+    this.adding = !this.adding;
+  };
 
   const addBookmark = function(bookmark){
     this.bookmarks.push(bookmark);
@@ -21,7 +25,7 @@ const store = (function(){
   };
 
   const toggleExpanded = function(){
-    this.expanded = !this.expanded;
+    this.bookmarks.expanded = !this.bookmarks.expanded;
   };
 
   const setRatingFilter = function(rating){
@@ -33,6 +37,7 @@ const store = (function(){
     adding: false,
     ratingFilter: 1,
 
+    addingBookmark,
     addBookmark,
     findById,
     findAndUpdate,

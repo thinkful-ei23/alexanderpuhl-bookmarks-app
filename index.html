@@ -12,7 +12,27 @@
   <section class="container">
     <h1>My Bookmarks</h1>
     <div>
-      <button>Add Bookmark</button>
+      <button type="button" class='add-bookmark-button js-add-bookmark-button'>Add Bookmark</button>
+      <form id="bookmark-form">
+        <h2>Create a Bookmark</h2>
+        <label for="title-entry" class="hide"></label>
+        <input type="text" name="title-entry" class="js-title-entry" placeholder="Title">
+        <label for="url-entry" class="hide"></label>
+        <input type="text" name="url-entry" class="js-url-entry" placeholder="https://example.com">
+        <br>
+        <label for="description-entry" class="hide"></label><br>
+        <textarea type="text" name="description-entry" class="js-description-entry" placeholder="Longer description here" rows="5" cols="30"></textarea>
+        <div class="js-rating-entry">
+          <input type="radio" name="rating" value="5" checked> 5 Stars<br>
+          <input type="radio" name="rating" value="4"> 4 Stars<br>
+          <input type="radio" name="rating" value="3"> 3 Stars<br>
+          <input type="radio" name="rating" value="2"> 2 Stars<br>
+          <input type="radio" name="rating" value="1"> 1 Stars<br>
+        </div>
+        <br>
+        <button type="submit">Add Bookmark</button>
+        <button type="button" class="form-cancel-button js-form-cancel-button">Cancel</button>
+      </form>
       <fieldset>
         <label for="rating-select">Minimum Rating</label>
         <select name="rating-select" id="rating-select">
@@ -25,7 +45,7 @@
       </fieldset>
     </div>
     <ul class="bookmark-list js-bookmark-list">
-      <li class="js-bookmark-element">
+      <!-- <li class="js-bookmark-element">
         <h2 class="list-title">Article On Cats</h2>
         <div class="ratings-display">
           <p>&#x2605; &#x2605; &#x2605; &#x2605; &#x2605;</p>
@@ -36,25 +56,8 @@
         <div class="ratings-display">
           <p>&#x2605; &#x2605; &#x2605; &#x2606; &#x2606;</p>
         </div>
-      </li>
+      </li> -->
     </ul>
-    <!-- <form id="bookmark-form">
-      <h2>Create a Bookmark</h2>
-      <label for="title-entry"></label>
-      <input type="text" name="title-entry" class="js-title-entry" placeholder="Title">
-      <label for="url-entry"></label>
-      <input type="text" name="url-entry" class="js-url-entry" placeholder="https://example.com">
-      <br>
-      <label for="description-entry"></label><br>
-      <textarea type="text" name="description-entry" class="js-description-entry" placeholder="Longer description here" rows="5" cols="30"></textarea>
-      <div class="rating-input">
-        <input type="radio" name="rating" value="5" checked> 5 Stars<br>
-        <input type="radio" name="rating" value="4"> 4 Stars<br>
-        <input type="radio" name="rating" value="3"> 3 Stars<br>
-        <input type="radio" name="rating" value="2"> 2 Stars<br>
-        <input type="radio" name="rating" value="1"> 1 Stars<br>
-      </div>
-    </form> -->
     <!-- <ul class="bookmark-list js-bookmark-list">
       <li class="js-bookmark-element detailed-look">
         <h2 class="list-title">Article On Cats</h2>

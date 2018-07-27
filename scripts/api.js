@@ -5,6 +5,7 @@ const api = (function () {
   const BASE_URL = 'https://thinkful-list-api.herokuapp.com/alex/bookmarks';
 
   const getBookmarks = function(callback) {
+    console.log('inside the api.getBookmarks function');
     $.getJSON(`${BASE_URL}`, callback);
   };
 
@@ -32,12 +33,17 @@ const api = (function () {
   };
 
   const deleteBookmark = function(id, callback){
-    
+    $.ajax({
+      url: `${BASE_URL}/${id}`,
+      type: 'DELETE',
+      success: callback
+    });
   };
 
   return {
     getBookmarks,
     createBookmark,
-    updateBookmark
+    updateBookmark,
+    deleteBookmark
   };
 })();
