@@ -41,8 +41,6 @@ const bookmarkList = (function(){
 
   function render(){
     console.log('\'render\' ran');
-    $('.js-add-bookmark-button').show();
-    $('.required-message').hide();
 
     if(store.adding) {
       $('#bookmark-form').show();
@@ -65,10 +63,7 @@ const bookmarkList = (function(){
 
   function handleAddBookmarkClicked(){
     $('.js-add-bookmark-button').click(function () {
-      // console.log('current status of store.adding: ' + store.adding);
-      // console.log('handleAddBookmarksClicked ran');
       store.addingBookmark();
-      // console.log('current status of store.adding: ' + store.adding);
       render();
     });
   }

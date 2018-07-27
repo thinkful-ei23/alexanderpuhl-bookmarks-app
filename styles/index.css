@@ -103,7 +103,7 @@ fieldset {
 }
 
 label {
-  display: block;
+  display: inline-block;
 }
 
 .overflow {
@@ -135,4 +135,9 @@ form > button {
 
 #rating-select {
   margin-top: .5rem;
+}
+
+footer {
+  text-align: center;
+  /* margin: 0 auto; */
 }

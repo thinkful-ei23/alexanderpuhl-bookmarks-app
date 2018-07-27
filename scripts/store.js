@@ -1,5 +1,4 @@
 'use strict';
-/* global $, api */
 
 const store = (function(){
 
