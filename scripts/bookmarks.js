@@ -7,32 +7,34 @@ const bookmarkList = (function(){
 
   function generateBookmarkElement(bookmark){
     let bookmarkTitle = `<h2 class="list-title">${bookmark.title}</h2>`;
-    let bookmarkURL = `<a href="${bookmark.url}" class="button">Visit Site</a>`;
     let bookmarkDescription = `<p>${bookmark.desc}</p>`;
-    console.log(bookmarkDescription);
     let bookmarkRating = `<p>${bookmark.rating}</p>`;
+    let bookmarkURL = `<a href="${bookmark.url}" class="button">Visit Site</a>`;
+    let bookmarkDelete = '<button class="bookmark-item-delete js-bookmark-delete">Delete Bookmark</button>';
+
 
     return `
-      <li class="js-bookmark-element" data-bookmark-id="${bookmark.id}">
+      <li class="bookmark-element js-bookmark-element" data-bookmark-id="${bookmark.id}">
         ${bookmarkTitle}
         <div class="ratings-display">
-          ${bookmarkDescription}
-          ${bookmarkURL} <button class="bookmark-item-delete js-bookmark-delete">Delete Bookmark</button>
           ${bookmarkRating}
         </div>
       </li>
-      `;
-    
+    `;
 
     // return `
     //   <li class="js-bookmark-element" data-bookmark-id="${bookmark.id}">
     //     ${bookmarkTitle}
     //     <div class="ratings-display">
+    //       ${bookmarkDescription}
     //       ${bookmarkRating}
+    //       ${bookmarkURL} ${bookmarkDelete}
     //     </div>
-    //     <button class="bookmark-item-delete js-bookmark-delete">Delete Bookmark</button>
     //   </li>
-    // `;
+    //   `;
+    
+
+
   }
 
   function generateBookmarkString(list){
@@ -69,7 +71,7 @@ const bookmarkList = (function(){
   function handleAddBookmarkClicked(){
     $('.js-add-bookmark-button').click(function () {
       console.log('current status of store.adding: ' + store.adding);
-      console.log('handleAddBookmarsClicked ran');
+      console.log('handleAddBookmarksClicked ran');
       store.addingBookmark();
       console.log('current status of store.adding: ' + store.adding);
       render();
