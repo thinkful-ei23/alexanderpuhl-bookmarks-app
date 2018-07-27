@@ -34,10 +34,15 @@ const store = (function(){
     // console.log('value of this.ratingFilter inside setRatingFilter() is : ' + this.ratingFilter);
   };
 
+  const toggleSubmitError = function(){
+    this.submitError = true;
+  };
+
   return {
     bookmarks: [],
     adding: false,
     ratingFilter: 1,
+    submitError: false,
 
     addingBookmark,
     addBookmark,
@@ -45,6 +50,7 @@ const store = (function(){
     findAndUpdate,
     findAndDelete,
     toggleExpanded,
-    setRatingFilter
+    setRatingFilter,
+    toggleSubmitError
   };
 })();

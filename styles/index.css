@@ -42,6 +42,11 @@ h2 {
   margin: 0 auto;
   width: 80%;
 }
+
+.required-message {
+  color: red;
+}
+
 .bookmark-list {
   margin-top: 1rem;
 }

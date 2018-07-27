@@ -15,9 +15,11 @@
       <button type="button" class='add-bookmark-button js-add-bookmark-button'>Add Bookmark</button>
       <form id="bookmark-form">
         <h2>Create a Bookmark</h2>
-        <label for="title-entry" class="hide"></label>
+        <span class="required-message">Title Required: </span>
+        <label for="title-entry" class="hide">Title Required</label>
         <input type="text" name="title-entry" class="js-title-entry" placeholder="Title">
-        <label for="url-entry" class="hide"></label>
+        <span class="required-message">URL Required: </span>
+        <label for="url-entry" class="hide">URL Required</label>
         <input type="text" name="url-entry" class="js-url-entry" placeholder="https://example.com">
         <br>
         <label for="description-entry" class="hide"></label><br>

@@ -9,7 +9,7 @@ const api = (function () {
     $.getJSON(`${BASE_URL}`, callback);
   };
 
-  const createBookmark = function(title, url, desc, rating, callback){
+  const createBookmark = function(title, url, desc, rating, successCallback, errorCallback){
     const newBookmark = {title, url, desc, rating};
     const data = JSON.stringify(newBookmark);
     $.ajax({
@@ -17,10 +17,8 @@ const api = (function () {
       method: 'POST',
       contentType: 'application/json',
       data: data,
-      success: callback,
-      error: function() {
-        console.log('Missing either Title or URL');
-      }
+      success: successCallback,
+      error: errorCallback
     });
   };
 

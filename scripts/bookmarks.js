@@ -45,11 +45,23 @@ const bookmarkList = (function(){
   function render(){
     console.log('\'render\' ran');
     $('.js-add-bookmark-button').show();
-    
+    $('.required-message').hide();
+
     if(store.adding) {
       $('#bookmark-form').show();
     } else {
       $('#bookmark-form').hide();
+    }
+    console.log('status of store.submitError: ' + store.submitError);
+
+    if(store.submitError) {
+      console.log('inside the true: ' + store.submitError);
+      console.log('toggleSubmitError: ' + true );
+      $('.required-message').show();
+    } else {
+      console.log('inside the false: ' + store.submitError);
+      console.log('toggleSubmitError: ' + false);
+      $('.required-message').hide();
     }
 
     let bookmarks = store.bookmarks;
@@ -91,9 +103,18 @@ const bookmarkList = (function(){
       $('.js-description-entry').val('');
 
       api.createBookmark(newBookmarkTitle, newBookmarkURL, newBookmarkDescription, newBookmarkRating, (newBookmark) => {
+        // use logic to figure out if an error occurred from api.createBookmark
+
+
         store.addBookmark(newBookmark);
         store.addingBookmark();
         render();
+      }, (error) => {
+        console.log(error.responseJSON.message);
+        //change the store to reflect an error has occured
+        store.toggleSubmitError();
+        render()
+        //render
       });
     });
   }
