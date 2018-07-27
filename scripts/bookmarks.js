@@ -14,7 +14,6 @@ const bookmarkList = (function(){
 
     // console.log(store.bookmark.expanded);
 
-
     return `
       <li class="bookmark-element js-bookmark-element" data-bookmark-id="${bookmark.id}">
         ${bookmarkTitle}
@@ -34,47 +33,23 @@ const bookmarkList = (function(){
     //     </div>
     //   </li>
     //   `;
-    
-
-
   }
 
   function generateBookmarkString(list){
-    console.log('inside generateBookmarkString()');
-    console.log(list);
-
     const result = list.filter(item => item.rating >= store.ratingFilter);
-    console.log('result is: ');
-    console.log(result);
-    // filter out based on rating filter here, then pass to generateBookmarkString
-    // let keys = Object.keys(list);
-    // let values = Object.values(list);
-
-    // console.log('Keys: ');
-    // console.log(keys);
-    // console.log('Values: ');
-    // console.log(values);
-
     const bookmarks = result.map((bookmark) => generateBookmarkElement(bookmark));
-    // console.log('inside generateBookmarkString, bookmarks is: ');
-    console.log(bookmarks);
     return bookmarks.join('');
   }
-
-
-
-
-
 
 
   function render(){
     console.log('\'render\' ran');
     $('.js-add-bookmark-button').show();
     
-    if(!store.adding) {
-      $('#bookmark-form').hide();
-    } else {
+    if(store.adding) {
       $('#bookmark-form').show();
+    } else {
+      $('#bookmark-form').hide();
     }
 
     let bookmarks = store.bookmarks;
@@ -82,15 +57,12 @@ const bookmarkList = (function(){
     $('.js-bookmark-list').html(bookmarkListBookmarksString);
   }
 
-
-
-
   function handleAddBookmarkClicked(){
     $('.js-add-bookmark-button').click(function () {
-      console.log('current status of store.adding: ' + store.adding);
-      console.log('handleAddBookmarksClicked ran');
+      // console.log('current status of store.adding: ' + store.adding);
+      // console.log('handleAddBookmarksClicked ran');
       store.addingBookmark();
-      console.log('current status of store.adding: ' + store.adding);
+      // console.log('current status of store.adding: ' + store.adding);
       render();
     });
   }
@@ -144,7 +116,6 @@ const bookmarkList = (function(){
 
   function handleSortBookmarks(){
     $('#rating-select').change(function () {
-      // console.log('inside bookmarks.handleSortBookmarks(), selection value is: ' + this.value);
       store.setRatingFilter(this.value);
       render();
     });
@@ -153,9 +124,6 @@ const bookmarkList = (function(){
   function handleEditBookmarkSubmit(){
 
   }
-
-
-
 
   function bindEventListeners(){
     console.log('ran bindEventListeners');

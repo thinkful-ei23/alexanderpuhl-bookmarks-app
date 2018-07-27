@@ -17,7 +17,10 @@ const api = (function () {
       method: 'POST',
       contentType: 'application/json',
       data: data,
-      success: callback
+      success: callback,
+      error: function() {
+        console.log('Missing either Title or URL');
+      }
     });
   };
 
