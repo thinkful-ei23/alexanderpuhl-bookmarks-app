@@ -1,5 +1,15 @@
-1) Build the file structure
-2) Build out the HTML of all the different looks
+
+
 3) Write pseudo Code and comments explaining the logical steps for JS
 4) Map out the different pieces I need to build.
 5) Must keep track of ID for communicating with the server.
+
+
+1) Start by writing all the store functions
+2) 
+
+
+
+
+store.findAndDelete is the final function that can delete something.
+It gets called by something 

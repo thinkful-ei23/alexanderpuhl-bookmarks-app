@@ -12,6 +12,8 @@ const bookmarkList = (function(){
     let bookmarkURL = `<a href="${bookmark.url}" class="button">Visit Site</a>`;
     let bookmarkDelete = '<button class="bookmark-item-delete js-bookmark-delete">Delete Bookmark</button>';
 
+    console.log(store.bookmark.expanded);
+
 
     return `
       <li class="bookmark-element js-bookmark-element" data-bookmark-id="${bookmark.id}">
