@@ -12,9 +12,23 @@ const bookmarkList = (function(){
     let bookmarkURL = `<a href="${bookmark.url}" class="button">Visit Site</a>`;
     let bookmarkDelete = '<button class="bookmark-item-delete js-bookmark-delete">Delete Bookmark</button>';
 
-    // console.log(store.bookmark.expanded);
+    console.log(bookmark.expanded);
 
-    return `
+    if(bookmark.expanded === true) {
+      // console.log('inside generateBookmarkElement true side');
+      return `
+      <li class="js-bookmark-element" data-bookmark-id="${bookmark.id}">
+        ${bookmarkTitle}
+        <div class="ratings-display">
+          ${bookmarkDescription}
+          ${bookmarkRating}
+          ${bookmarkURL} ${bookmarkDelete}
+        </div>
+      </li>
+      `;
+    }else {
+      // console.log('inside generateBookmarkElement false side');
+      return `
       <li class="bookmark-element js-bookmark-element" data-bookmark-id="${bookmark.id}">
         ${bookmarkTitle}
         <div class="ratings-display">
@@ -22,17 +36,7 @@ const bookmarkList = (function(){
         </div>
       </li>
     `;
-
-    // return `
-    //   <li class="js-bookmark-element" data-bookmark-id="${bookmark.id}">
-    //     ${bookmarkTitle}
-    //     <div class="ratings-display">
-    //       ${bookmarkDescription}
-    //       ${bookmarkRating}
-    //       ${bookmarkURL} ${bookmarkDelete}
-    //     </div>
-    //   </li>
-    //   `;
+    }
   }
 
   function generateBookmarkString(list){
@@ -134,8 +138,10 @@ const bookmarkList = (function(){
   }
 
   function handleDisplayDetailedView(){
-    $('.js-bookmark-list').on('click',function () {
-      console.log('hello');
+    $('.js-bookmark-list').on('click', '.list-title', event => {
+      const id = getBookmarkIdFromElement(event.currentTarget);
+      store.toggleExpanded(id);
+      render();
     });
   }
 

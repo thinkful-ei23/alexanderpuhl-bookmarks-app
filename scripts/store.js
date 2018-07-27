@@ -23,19 +23,14 @@ const store = (function(){
   const findAndDelete = function(id) {
     this.bookmarks = this.bookmarks.filter(bookmark => bookmark.id !== id);
   };
-
-  // const setExpandedToFalse = function(){
-
-  // };
   
-  const toggleExpanded = function(){
-    this.bookmarks.expanded = !this.bookmarks.expanded;
+  const toggleExpanded = function(id){
+    const foundElement = this.findById(id);
+    foundElement.expanded = !foundElement.expanded;
   };
 
   const setRatingFilter = function(rating){
-    // console.log('Inside store.setRatingFilter, value is: ' + rating);
     this.ratingFilter = rating;
-    // console.log('value of this.ratingFilter inside setRatingFilter() is : ' + this.ratingFilter);
   };
 
   const submitErrorActivated = function(){
@@ -58,7 +53,6 @@ const store = (function(){
     findById,
     findAndUpdate,
     findAndDelete,
-    // setExpandedToFalse,
     toggleExpanded,
     setRatingFilter,
     submitErrorActivated,

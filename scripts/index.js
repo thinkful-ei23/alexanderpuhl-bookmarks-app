@@ -13,12 +13,3 @@ $(document).ready(function() {
     bookmarkList.render();
   });
 });
-
-
-// api.createBookmark('google', 'https://google.com', 'website for finding stuff on the internet', '5', (newItem) => {
-//   api.getBookmarks((items) => {
-//     console.log(items);
-//   });
-// });
-
-
