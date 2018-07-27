@@ -68,6 +68,11 @@ li {
   margin-right: 1rem;
 }
 
+.js-rating-entry {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
 #bookmark-form {
   margin-bottom: 1rem;
 }
@@ -122,4 +127,12 @@ a.button {
 
 .hide {
   display: none;
+}
+
+form > button {
+  margin-top: 1rem;
+}
+
+#rating-select {
+  margin-top: .5rem;
 }

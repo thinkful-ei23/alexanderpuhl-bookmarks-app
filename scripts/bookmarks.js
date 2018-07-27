@@ -41,7 +41,6 @@ const bookmarkList = (function(){
     return bookmarks.join('');
   }
 
-
   function render(){
     console.log('\'render\' ran');
     $('.js-add-bookmark-button').show();
@@ -49,18 +48,15 @@ const bookmarkList = (function(){
 
     if(store.adding) {
       $('#bookmark-form').show();
+      $('.js-add-bookmark-button').hide();
     } else {
       $('#bookmark-form').hide();
+      $('.js-add-bookmark-button').show();
     }
-    console.log('status of store.submitError: ' + store.submitError);
 
     if(store.submitError) {
-      console.log('inside the true: ' + store.submitError);
-      console.log('toggleSubmitError: ' + true );
       $('.required-message').show();
     } else {
-      console.log('inside the false: ' + store.submitError);
-      console.log('toggleSubmitError: ' + false);
       $('.required-message').hide();
     }
 
@@ -103,18 +99,13 @@ const bookmarkList = (function(){
       $('.js-description-entry').val('');
 
       api.createBookmark(newBookmarkTitle, newBookmarkURL, newBookmarkDescription, newBookmarkRating, (newBookmark) => {
-        // use logic to figure out if an error occurred from api.createBookmark
-
         store.submitErrorDeactivated();
         store.addBookmark(newBookmark);
         store.addingBookmark();
         render();
-      }, (error) => {
-        console.log(error.responseJSON.message);
-        //change the store to reflect an error has occured
+      }, () => {
         store.submitErrorActivated();
         render();
-        //render
       });
     });
   }
@@ -142,8 +133,10 @@ const bookmarkList = (function(){
     });
   }
 
-  function handleEditBookmarkSubmit(){
-
+  function handleDisplayDetailedView(){
+    $('.js-bookmark-list').on('click',function () {
+      console.log('hello');
+    });
   }
 
   function bindEventListeners(){
@@ -152,7 +145,7 @@ const bookmarkList = (function(){
     handleCancelAddBookmark();
     handleNewBookmarkSubmit();
     handleDeleteBookmarkClicked();
-    handleEditBookmarkSubmit();
+    handleDisplayDetailedView();
     handleSortBookmarks();
 
   }

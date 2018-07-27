@@ -8,6 +8,7 @@ $(document).ready(function() {
   console.log('finished running bindEventListeners');
   console.log('Moving onto api.getBookmarks');
   api.getBookmarks((bookmarks) => {
+    bookmarks.forEach((bookmark) => bookmark.expanded = false);
     bookmarks.forEach((bookmark) => store.addBookmark(bookmark));
     bookmarkList.render();
   });

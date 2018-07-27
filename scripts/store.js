@@ -24,6 +24,10 @@ const store = (function(){
     this.bookmarks = this.bookmarks.filter(bookmark => bookmark.id !== id);
   };
 
+  // const setExpandedToFalse = function(){
+
+  // };
+  
   const toggleExpanded = function(){
     this.bookmarks.expanded = !this.bookmarks.expanded;
   };
@@ -42,6 +46,7 @@ const store = (function(){
     this.submitError = false;
   };
 
+
   return {
     bookmarks: [],
     adding: false,
@@ -53,6 +58,7 @@ const store = (function(){
     findById,
     findAndUpdate,
     findAndDelete,
+    // setExpandedToFalse,
     toggleExpanded,
     setRatingFilter,
     submitErrorActivated,
