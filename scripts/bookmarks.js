@@ -55,7 +55,7 @@ const bookmarkList = (function(){
     // console.log('Values: ');
     // console.log(values);
 
-    const bookmarks = list.map((bookmark) => generateBookmarkElement(bookmark));
+    const bookmarks = result.map((bookmark) => generateBookmarkElement(bookmark));
     // console.log('inside generateBookmarkString, bookmarks is: ');
     console.log(bookmarks);
     return bookmarks.join('');
