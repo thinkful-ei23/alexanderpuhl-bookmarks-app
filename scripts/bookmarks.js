@@ -105,15 +105,15 @@ const bookmarkList = (function(){
       api.createBookmark(newBookmarkTitle, newBookmarkURL, newBookmarkDescription, newBookmarkRating, (newBookmark) => {
         // use logic to figure out if an error occurred from api.createBookmark
 
-
+        store.submitErrorDeactivated();
         store.addBookmark(newBookmark);
         store.addingBookmark();
         render();
       }, (error) => {
         console.log(error.responseJSON.message);
         //change the store to reflect an error has occured
-        store.toggleSubmitError();
-        render()
+        store.submitErrorActivated();
+        render();
         //render
       });
     });

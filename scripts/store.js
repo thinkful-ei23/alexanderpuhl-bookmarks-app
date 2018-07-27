@@ -34,8 +34,12 @@ const store = (function(){
     // console.log('value of this.ratingFilter inside setRatingFilter() is : ' + this.ratingFilter);
   };
 
-  const toggleSubmitError = function(){
+  const submitErrorActivated = function(){
     this.submitError = true;
+  };
+
+  const submitErrorDeactivated = function(){
+    this.submitError = false;
   };
 
   return {
@@ -51,6 +55,7 @@ const store = (function(){
     findAndDelete,
     toggleExpanded,
     setRatingFilter,
-    toggleSubmitError
+    submitErrorActivated,
+    submitErrorDeactivated
   };
 })();
