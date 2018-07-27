@@ -9,6 +9,7 @@ const bookmarkList = (function(){
     let bookmarkTitle = `<h2 class="list-title">${bookmark.title}</h2>`;
     let bookmarkURL = `<a href="${bookmark.url}" class="button">Visit Site</a>`;
     let bookmarkDescription = `<p>${bookmark.desc}</p>`;
+    console.log(bookmarkDescription);
     let bookmarkRating = `<p>${bookmark.rating}</p>`;
 
     return `
@@ -72,8 +73,6 @@ const bookmarkList = (function(){
       store.addingBookmark();
       console.log('current status of store.adding: ' + store.adding);
       render();
-      // $('.js-add-bookmark-button').hide();
-      // $('#bookmark-form').show();
     });
   }
 
