@@ -12,7 +12,7 @@ const bookmarkList = (function(){
     let bookmarkURL = `<a href="${bookmark.url}" class="button">Visit Site</a>`;
     let bookmarkDelete = '<button class="bookmark-item-delete js-bookmark-delete">Delete Bookmark</button>';
 
-    console.log(store.bookmark.expanded);
+    // console.log(store.bookmark.expanded);
 
 
     return `
@@ -40,7 +40,24 @@ const bookmarkList = (function(){
   }
 
   function generateBookmarkString(list){
+    console.log('inside generateBookmarkString()');
+    console.log(list);
+
+    const result = list.filter(item => item.rating >= store.ratingFilter);
+    console.log('result is: ');
+    console.log(result);
+    // filter out based on rating filter here, then pass to generateBookmarkString
+    // let keys = Object.keys(list);
+    // let values = Object.values(list);
+
+    // console.log('Keys: ');
+    // console.log(keys);
+    // console.log('Values: ');
+    // console.log(values);
+
     const bookmarks = list.map((bookmark) => generateBookmarkElement(bookmark));
+    // console.log('inside generateBookmarkString, bookmarks is: ');
+    console.log(bookmarks);
     return bookmarks.join('');
   }
 
@@ -61,9 +78,7 @@ const bookmarkList = (function(){
     }
 
     let bookmarks = store.bookmarks;
-    // console.log(bookmarks);
     const bookmarkListBookmarksString = generateBookmarkString(bookmarks);
-    //insert that HTML into the DOM
     $('.js-bookmark-list').html(bookmarkListBookmarksString);
   }
 
@@ -89,8 +104,6 @@ const bookmarkList = (function(){
       render();
     });
   }
-
-
 
   function handleNewBookmarkSubmit(){
     $('#bookmark-form').submit(function (event) {
@@ -129,9 +142,18 @@ const bookmarkList = (function(){
     });
   }
 
+  function handleSortBookmarks(){
+    $('#rating-select').change(function () {
+      // console.log('inside bookmarks.handleSortBookmarks(), selection value is: ' + this.value);
+      store.setRatingFilter(this.value);
+      render();
+    });
+  }
+
   function handleEditBookmarkSubmit(){
 
   }
+
 
 
 
@@ -142,6 +164,7 @@ const bookmarkList = (function(){
     handleNewBookmarkSubmit();
     handleDeleteBookmarkClicked();
     handleEditBookmarkSubmit();
+    handleSortBookmarks();
 
   }
 

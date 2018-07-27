@@ -29,7 +29,9 @@ const store = (function(){
   };
 
   const setRatingFilter = function(rating){
+    // console.log('Inside store.setRatingFilter, value is: ' + rating);
     this.ratingFilter = rating;
+    // console.log('value of this.ratingFilter inside setRatingFilter() is : ' + this.ratingFilter);
   };
 
   return {
