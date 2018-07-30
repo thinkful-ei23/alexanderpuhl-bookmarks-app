@@ -87,6 +87,7 @@ li {
 }
 .list-title {
   background-color: #abafb5;
+  cursor: pointer;
 }
 
 .bookmark-element h2 {
