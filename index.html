@@ -14,7 +14,7 @@
       <h1>My Bookmarks</h1>
     </header>
     <button type="button" class='add-bookmark-button js-add-bookmark-button'>Add Bookmark</button>
-    <form id="bookmark-form">
+    <form id="bookmark-form" aria-controls="">
       <header>
         <h2>Create a Bookmark</h2>
       </header>
@@ -51,7 +51,7 @@
         <option value="1" selected="selected">1 Stars</option>
       </select>
     </fieldset>
-    <ul class="bookmark-list js-bookmark-list">
+    <ul class="bookmark-list js-bookmark-list" id="bookmarks" aria-live="polite">
     </ul>
   </main>
   <footer role="contentinfo">July 2018 - Alexander Puhl</footer>
